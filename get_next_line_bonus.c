@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acan <ahmetabdullahcan@outlook.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/07 14:15:54 by acan              #+#    #+#             */
-/*   Updated: 2023/08/09 15:48:24 by acan             ###   ########.fr       */
+/*   Created: 2023/08/08 02:06:14 by acan              #+#    #+#             */
+/*   Updated: 2023/08/08 02:43:49 by acan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*find_line(int fd, char *text)
 {
@@ -59,18 +59,15 @@ char	*seperate_line(char *text)
 
 char	*get_next_line(int fd)
 {
-	static char	*text;
+	static char	*text[1025];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
-	{
-		free(text);
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 1025)
 		return (NULL);
-	}
-	text = find_line(fd, text);
-	if (!text)
+	text[fd] = find_line(fd, text[fd]);
+	if (!text[fd])
 		return (NULL);
-	line = seperate_line(text);
-	text = cut_line(text);
+	line = seperate_line(text[fd]);
+	text[fd] = cut_line(text[fd]);
 	return (line);
 }
