@@ -6,7 +6,7 @@
 /*   By: acan <ahmetabdullahcan@outlook.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 02:06:14 by acan              #+#    #+#             */
-/*   Updated: 2023/08/08 02:43:49 by acan             ###   ########.fr       */
+/*   Updated: 2023/08/09 17:18:29 by acan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ char	*seperate_line(char *text)
 
 char	*get_next_line(int fd)
 {
-	static char	*text[1025];
+	static char	*text[FD_LIMIT];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 1025)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 10240)
 		return (NULL);
 	text[fd] = find_line(fd, text[fd]);
 	if (!text[fd])

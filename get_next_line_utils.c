@@ -6,7 +6,7 @@
 /*   By: acan <ahmetabdullahcan@outlook.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 14:15:49 by acan              #+#    #+#             */
-/*   Updated: 2023/08/07 22:48:53 by acan             ###   ########.fr       */
+/*   Updated: 2023/08/10 12:56:35 by acan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	hasnlornull(char *s)
 		return (0);
 	while (s[i])
 	{
-		if (s[i] == '\0' || s[i] == '\n')
+		if (s[i] == '\n')
 			return (1);
 		i++;
 	}
@@ -69,27 +69,25 @@ char	*cut_line(char *text)
 {
 	int		i;
 	int		j;
-	int		k;
 	char	*ret;
 
 	i = 0;
 	while (text[i] != '\n' && text[i] != '\0')
 		i++;
-	if (!*text)
+	if (text[i] == '\0')
 	{
 		free(text);
 		return (0);
 	}
-	if (text[i] == '\n')
-		i++;
+	i++;
 	j = strlen_int(text);
 	ret = (char *)ft_calloc(j - i + 1);
 	if (!ret)
 		return (NULL);
-	k = 0;
-	while (i < j && text[i] != '\0')
-		ret[k++] = text[i++];
-	ret[k] = '\0';
+	j = 0;
+	while (text[i] != '\0')
+		ret[j++] = text[i++];
+	ret[j] = '\0';
 	free(text);
 	return (ret);
 }

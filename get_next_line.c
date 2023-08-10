@@ -6,7 +6,7 @@
 /*   By: acan <ahmetabdullahcan@outlook.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 14:15:54 by acan              #+#    #+#             */
-/*   Updated: 2023/08/09 15:48:24 by acan             ###   ########.fr       */
+/*   Updated: 2023/08/10 12:59:06 by acan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*find_line(int fd, char *text)
 	char	*buf;
 
 	rdcount = 1;
-	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return (NULL);
 	while (rdcount != 0 && !hasnlornull(text))
@@ -48,7 +48,8 @@ char	*seperate_line(char *text)
 		return (NULL);
 	while (text[i] != '\n' && text[i])
 		i++;
-	i++;
+	if (text[i] == '\n')
+		i++;
 	ret = (char *)malloc(i + 1);
 	j = -1;
 	while (++j < i)
