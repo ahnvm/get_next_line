@@ -6,7 +6,7 @@
 /*   By: acan <ahmetabdullahcan@outlook.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 02:06:37 by acan              #+#    #+#             */
-/*   Updated: 2023/08/10 13:00:03 by acan             ###   ########.fr       */
+/*   Updated: 2023/08/12 18:13:46 by acan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 # define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 3
-# endif
-# ifndef FD_LIMIT
-#  define FD_LIMIT 1024
 # endif
 
 # include <unistd.h>
