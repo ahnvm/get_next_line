@@ -6,7 +6,7 @@
 /*   By: acan <ahmetabdullahcan@outlook.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 02:06:02 by acan              #+#    #+#             */
-/*   Updated: 2023/08/10 12:58:51 by acan             ###   ########.fr       */
+/*   Updated: 2023/08/12 18:09:46 by acan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*cut_line(char *text)
 	char	*ret;
 
 	i = 0;
-	while (text[i] != '\n' && text[i] != '\0')
+	while (text[i] != '\n' && text[i])
 		i++;
 	if (text[i] == '\0')
 	{
@@ -85,7 +85,7 @@ char	*cut_line(char *text)
 	if (!ret)
 		return (NULL);
 	j = 0;
-	while (text[i] != '\0')
+	while (text[i])
 		ret[j++] = text[i++];
 	ret[j] = '\0';
 	free(text);
