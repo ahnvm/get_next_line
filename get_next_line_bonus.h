@@ -6,14 +6,14 @@
 /*   By: acan <ahmetabdullahcan@outlook.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 02:06:37 by acan              #+#    #+#             */
-/*   Updated: 2023/08/12 18:13:46 by acan             ###   ########.fr       */
+/*   Updated: 2023/08/12 18:31:39 by acan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 3
+#  define BUFFER_SIZE 42
 # endif
 
 # include <unistd.h>
