@@ -6,11 +6,11 @@
 /*   By: acan <ahmetabdullahcan@outlook.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 02:06:02 by acan              #+#    #+#             */
-/*   Updated: 2023/08/12 18:09:46 by acan             ###   ########.fr       */
+/*   Updated: 2024/08/30 17:23:23 by acan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "../inc/get_next_line_bonus.h"
 
 char	*buf_to_text(char *text, char *buf)
 {

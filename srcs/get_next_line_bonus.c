@@ -6,11 +6,11 @@
 /*   By: acan <ahmetabdullahcan@outlook.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 02:06:14 by acan              #+#    #+#             */
-/*   Updated: 2023/08/12 18:14:26 by acan             ###   ########.fr       */
+/*   Updated: 2024/08/30 17:23:16 by acan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "../inc/get_next_line_bonus.h"
 
 char	*find_line(int fd, char *text)
 {
